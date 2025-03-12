@@ -6,18 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: Arial;">
+<body>
     <header>
-        <h1>John Li</h1>
+        <h1 id="webname">John Li</h1>
         <nav>
-            <a href="../index.html">Home</a> |
-            <a href="cv.html">CV</a> |
-            <a href="contact.html">Contact Me</a> |
-            <a href="fun.html">For Fun</a>
+            <a class="nav-link" href="../index.html">🏠 Home</a> |
+            <a class="nav-link" href="cv.html">📄 Resume</a> |
+            <a class="nav-link" href="contact.html">📞 Contact Me</a> |
+            <a class="nav-link" href="fun.html">🎮 Interests</a>
         </nav>
     </header>
-    <div class="main" style="max-width: 900px; margin: auto; padding: 20px;">
+    <div class="main" >
         <h2>Contact Me</h2>
         <form>
             <label>Your name (required): <input type="text" name="name" required></label><br>
@@ -25,7 +29,7 @@
             <label>Your comment: <textarea name="comment" required></textarea></label><br>
             <input type="submit" value="SEND">
         </form>
-        <table border="1" style="width: 100%;">
+        <table border="1" >
             <tr>
                 <th>Contact Method</th>
                 <th>Details</th>
@@ -40,7 +44,7 @@
             </tr>
         </table>
     </div>
-    <footer style="margin-top: 40px; text-align: center;">
+    <footer>
         &copy; 2025 designed 🛠️ and coded 👩‍💻 by John Li
     </footer>
 </body>

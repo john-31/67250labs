@@ -2,23 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="./static/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="John Li">
     <meta name="keywords" content="Carnegie Mellon University, Information Systems">
     <meta name="description" content="John Li professional website">
     <title>John Li</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body style="font-family: Arial;">
-    <header style="color:blue; background:lightblue; padding: 10px;">
-        <h1>John Li</h1>
+<body >
+    <header >
+        <h1 id="webname">John Li</h1>
         <nav>
-            <a href="views/cv.html">CV</a> |
-            <a href="views/contact.html">Contact Me</a> |
-            <a href="views/fun.html">For Fun</a>
+            <a class="nav-link" href="index.html">🏠 Home</a> |
+            <a class="nav-link" href="views/cv.html">📄 Resume</a> |
+            <a class="nav-link" href="views/contact.html">📞 Contact Me</a> |
+            <a class="nav-link" href="views/fun.html">🎮 Interests</a>
         </nav>
+        
     </header>
-    <div class="main" style="max-width: 900px; margin: auto; padding: 20px;">
+    <div class="main" >
         <h2>Hi, my name is John</h2>
         <img src="static/hangzhou.jpg" alt="John Li" style="display: block; margin: auto; max-width: 60%;">
         <p id="intro">Hey, I am John! I am studying Information Systems and Computer Science at Carnegie Mellon. 
@@ -27,7 +33,7 @@
             I also love video games, mostly FPS and MOBA. When I am not coding or playing music, I love badminton and working out as well.
         </p>
     </div>
-    <footer style="margin-top: 40px; text-align: center;">
+    <footer >
         &copy; 2025 designed 🛠️ and coded 👩‍💻 by John Li
     </footer>
 </body>

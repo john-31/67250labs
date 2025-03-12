@@ -1,0 +1,46 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    padding: 5px;
+    margin: 5px;
+    #webname {
+        color: #756bf8;
+    }
+    
+    .nav-link {
+        text-decoration: none;          /* Removes underline from links */
+        color: #3b91f3;                 /* Bright blue for visual appeal */
+        margin-right: 15px;             /* Provides spacing between links */
+        font-weight: bold;              /* Makes navigation links more prominent */
+        transition: color 0.3s ease;    /* Smooth transition effect on hover */
+    }
+    
+    .nav-link:hover {
+        color: #122a42;                 /* Darker color on hover for better interactivity */
+        transform: scale(1.1);          /* Slight scale-up on hover for playful effect */
+    }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        background-color: #7f96ff;  /* replace with your choice */
+        color: #ffffff;             /* replace with your choice */
+        width: fit-content;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #f2f2f2;  /* zebra stripes for even rows */
+    }
+    form * {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+    form input[type="submit"] {
+        background-color: rgb(143, 158, 240);
+        border: none;
+        border-radius: 8px;
+    }
+        
+}
