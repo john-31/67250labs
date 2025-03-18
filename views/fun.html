@@ -12,7 +12,7 @@
     <script src="../static/script.js" defer></script>
 
 </head>
-<body>
+<body onload="addYear()">
     <header>
         <h1 id="webname">John Li</h1>
         <nav>
@@ -24,15 +24,19 @@
     </header>
     <div class="main">
         <h2>Things I Love to Do for Fun</h2>
-        <ul >
+
+        <button id="showButton" onclick="showList()">Click to see...</button>
+    
+        <ul id="funList">
             <li>Gaming</li>
             <li>Reading</li>
             <li>Music</li>
             <li>Badminton</li>
         </ul>
-    </div>
-    <footer >
-        &copy; 2025 designed 🛠️ and coded 👩‍💻 by John Li
-    </footer>
+    </div>    
+    <footer>
+        <p id="copyYear"></p> 
+        designed 🛠️ and coded 👩‍💻 by John Li
+    </footer>    
 </body>
 </html>

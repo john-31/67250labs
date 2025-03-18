@@ -44,3 +44,78 @@
     }
         
 }
+
+#funList {
+    display: none;
+    margin-top: 10px;
+}
+
+#showButton {
+    background-color: #110985;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: painter;
+    font-size: 16px;
+
+}
+
+#showButton:hover {
+    background-color: #5c5a86;
+}
+
+
+#readMoreBtn, #readLessBtn {
+    background-color: #151041; 
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+#readMoreBtn:hover, #readLessBtn:hover {
+    background-color: #6aa7e7;
+}
+
+
+#fullBio {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.error-message {
+    color: rgb(141, 16, 16);
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #007BFF; /* Blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

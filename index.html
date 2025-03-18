@@ -13,9 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="./static/script.js" defer></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./static/script.js" defer></script>
 </head>
-<body >
+<body onload="addYear()">
     <header >
         <h1 id="webname">John Li</h1>
         <nav>
@@ -29,14 +30,19 @@
     <div class="main" >
         <h2 id="greeting">Hi, my name is John</h2>
         <img src="static/hangzhou.jpg" alt="John Li" style="display: block; margin: auto; max-width: 60%;">
-        <p id="intro">Hey, I am John! I am studying Information Systems and Computer Science at Carnegie Mellon. 
-            I love robotics. I was the strategy lead and driver for my FRC team and even researched machine learning for robotics.  
+        <p id="shortBio">Hey, I am John! I love technology, music, and video games.</p>
+        <p id="fullBio" style="display: none;">
+            I am studying Information Systems and Computer Science at Carnegie Mellon. I love robotics. I was the strategy lead and driver for my FRC team and even researched machine learning for robotics.
             Outside of tech, music is a huge part of my life. I play piano and guitar, always messing around with different genres. 
             I also love video games, mostly FPS and MOBA. When I am not coding or playing music, I love badminton and working out as well.
         </p>
+        <button id="readMoreBtn">Read More</button>
+        <button id="readLessBtn" style="display: none;">Read Less</button>    
+        
     </div>
     <footer >
-        &copy; 2025 designed 🛠️ and coded 👩‍💻 by John Li
+        <p id = "copyYear"></p>
+        designed 🛠️ and coded 👩‍💻 by John Li
     </footer>
 </body>
 </html>
