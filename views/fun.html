@@ -1,4 +1,3 @@
-<!-- views/fun.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="../static/script.js" defer></script>
-
 </head>
 <body onload="addYear()">
     <header>
@@ -22,21 +20,48 @@
             <a class="nav-link" href="fun.html">🎮 Interests</a>
         </nav>
     </header>
-    <div class="main">
-        <h2>Things I Love to Do for Fun</h2>
 
-        <button id="showButton" onclick="showList()">Click to see...</button>
-    
-        <ul id="funList">
-            <li>Gaming</li>
-            <li>Reading</li>
-            <li>Music</li>
-            <li>Badminton</li>
-        </ul>
-    </div>    
+    <div class="mainLayout">
+        <div id="item1">
+            <h2>Things I Love to Do for Fun</h2>
+            <ul id="funList">
+                <li>Gaming</li>
+                <li>Reading</li>
+                <li>Music</li>
+                <li>Badminton</li>
+            </ul>
+            <!-- <button id="showButton" onclick="showList()">Click to see...</button> -->
+        </div>
+
+        <div id="item2">
+            <img src="../static/syq.jpg" alt="Fun activity" class="funIMG">
+        </div>
+
+        <div id="item3">
+            <iframe 
+                class="funVideo"
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/KGNkVt0_w34?start=10                " 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div id="item4">
+            <div class="container">
+                <h2>Need Some Advice?</h2>
+                <p id="adviceText">Click the button to get a random piece of advice!</p>
+                <button onclick="getAdvice()">Get Advice</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p id="copyYear"></p> 
         designed 🛠️ and coded 👩‍💻 by John Li
-    </footer>    
+    </footer>
 </body>
 </html>

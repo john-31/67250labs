@@ -1,8 +1,9 @@
-let x = 5
-let y = 7
+let x = 5;
+let y = 7;
 
 let A = 'Hello ';
 let B = 'world!';
+
 function SumNPrint(x1, x2) {
     let x3 = x1 + x2;
     console.log(x3);
@@ -10,7 +11,6 @@ function SumNPrint(x1, x2) {
 }
 
 let z = SumNPrint(x, y);
-
 let C = SumNPrint(A, B);
 
 console.log(z);
@@ -18,7 +18,6 @@ console.log(C);
 
 if (C.length > z) {
     console.log(C);
-
 } else if (C.length < z) {
     console.log(z);
 } else {
@@ -26,7 +25,73 @@ if (C.length > z) {
 }
 
 
+function addYear() {
+    let currentYear = new Date().getFullYear();
+    let copyElem = document.getElementById("copyYear");
+    if (copyElem) {
+        copyElem.innerHTML = `&copy; ${currentYear}`;
+    }
+}
+
+//function showList() {
+//    let list = document.getElementById("funList");
+//    let button = document.getElementById("showButton");
+
+//    if (list && button) { 
+//        list.style.display = "block"; 
+//        button.style.display = "none"; 
+//    }
+//}
+
+
+function greetingFunc() {
+    let d = new Date();
+    let h = d.getHours();
+    let greetingMessage = '';
+
+    if (h < 12) {
+        greetingMessage = 'Good morning, I am John';
+    } else if (h < 18) {
+        greetingMessage = 'Good afternoon, I am John';
+    } else if (h < 20) {
+        greetingMessage = 'Good evening, I am John';
+    } else {
+        greetingMessage = 'Good night, I am John';
+    }
+
+    let greetElem = document.getElementById("greeting");
+    if (greetElem) {
+        greetElem.innerHTML = greetingMessage;
+    }
+}
+
+
+function getAdvice() {
+    fetch("https://api.adviceslip.com/advice")
+        .then(response => response.json())
+        .then(data => {
+            const advice = data.slip.advice;
+            let adviceElem = document.getElementById("adviceText");
+            if (adviceElem) {
+                adviceElem.innerText = advice;
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching advice:", error);
+            let adviceElem = document.getElementById("adviceText");
+            if (adviceElem) {
+                adviceElem.innerText = "Oops! Could not fetch advice right now.";
+            }
+        });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+    
+    if (document.getElementById("greeting")) {
+        greetingFunc();
+    }
+
+    
     if (document.getElementById("funList")) {
         let L1 = ['Watermelon', 'Pineapple', 'Pear', 'Banana'];
         let L2 = ['Apple', 'Banana', 'Kiwi', 'Orange'];
@@ -35,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
             array.forEach((item, index) => {
                 if (item === "Banana") {
                     alert(`We found a banana in the ${arrayName} at index ${index}`);
-                    return;
                 }
             });
         }
@@ -44,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         findTheBanana(L2, 'second array');
     }
 
+   
     if (document.getElementById("contactForm")) {
         document.getElementById("contactForm").addEventListener("submit", function (event) {
             let isValid = true;
@@ -83,55 +148,21 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
 
-function greetingFunc() {
-    let d = new Date();
-    let h = d.getHours();
-    let greetingMessage = '';
+    
+    if (document.getElementById("readMoreBtn") && document.getElementById("readLessBtn")) {
+        $("#readMoreBtn").click(function () {
+            $("#shortBio").hide();
+            $("#fullBio").slideDown();
+            $("#readMoreBtn").hide();
+            $("#readLessBtn").show();
+        });
 
-    if (h < 12) {
-        greetingMessage = 'Good morning, I am John';
-    } else if (h < 18) {
-        greetingMessage = 'Good afternoon, I am John';
-    } else if (h < 20) {
-        greetingMessage = 'Good evening, I am John';
-    } else {
-        greetingMessage = 'Good night, I am John';
+        $("#readLessBtn").click(function () {
+            $("#fullBio").slideUp();
+            $("#shortBio").show();
+            $("#readMoreBtn").show();
+            $("#readLessBtn").hide();
+        });
     }
-
-    document.getElementById("greeting").innerHTML = greetingMessage;
-}
-
-greetingFunc();
-
-function addYear() {
-    let currentYear = new Date().getFullYear();
-    document.getElementById("copyYear").innerHTML = `&copy; ${currentYear}`;
-}
-
-function showList() {
-    let list = document.getElementById("funList");
-    let button = document.getElementById("showButton");
-
-    if (list && button) { 
-        list.style.display = "block"; 
-        button.style.display = "none"; 
-    }
-}
-
-$(document).ready(function () {
-    $("#readMoreBtn").click(function () {
-        $("#shortBio").hide();
-        $("#fullBio").slideDown();
-        $("#readMoreBtn").hide();
-        $("#readLessBtn").show();
-    });
-
-    $("#readLessBtn").click(function () {
-        $("#fullBio").slideUp();
-        $("#shortBio").show();
-        $("#readMoreBtn").show();
-        $("#readLessBtn").hide();
-    });
 });
