@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./static/style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="John Li">
-    <meta name="keywords" content="Carnegie Mellon University, Information Systems">
-    <meta name="description" content="John Li professional website">
-    <title>John Li</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="./static/script.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="John Li" />
+  <meta name="description" content="John Li Website" />
+  <title>John Li</title>
+  <link rel="stylesheet" href="./static/style.css" />
+  <link rel="stylesheet" href="./static/template.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./static/script.js" defer></script>
 </head>
 <body onload="addYear()">
+  <div class="container">
     <header>
-        <h1 id="webname">John Li</h1>
-        <nav>
-            <a class="nav-link" href="index.html">🏠 Home</a> |
-            <a class="nav-link" href="views/cv.html">📄 Resume</a> |
-            <a class="nav-link" href="views/contact.html">📞 Contact Me</a> |
-            <a class="nav-link" href="views/fun.html">🎮 Interests</a>
-        </nav>
-        
+      <h1 id="webname">John Li</h1>
     </header>
 
-    <div class="mainLayout">
-        <h2 id="greeting">Hi, my name is John</h2>
-        <img src="static/hangzhou.jpg" alt="John Li" style="display: block; margin: auto; max-width: 60%;">
-        <p id="shortBio">Hey, I am John! I love technology, music, and video games.</p>
-        <p id="fullBio" style="display: none;">
-            I am studying Information Systems and Computer Science at Carnegie Mellon. I love robotics. I was the strategy lead and driver for my FRC team and even researched machine learning for robotics.
-            Outside of tech, music is a huge part of my life. I play piano and guitar, always messing around with different genres. 
-            I also love video games, mostly FPS and MOBA. When I am not coding or playing music, I love badminton and working out as well.
-        </p>
-        <button id="readMoreBtn">Read More</button>
-        <button id="readLessBtn" style="display: none;">Read Less</button>
+    <nav>
+      <div class="nav-container">
+        <i class="fas fa-bars hamburger-icon" onclick="toggleMenu()"></i>
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="template.html">🧱 Template</a>
+          <a class="nav-link" href="index.html">🏠 Home</a> |
+          <a class="nav-link" href="views/cv.html">📄 Resume</a> |
+          <a class="nav-link" href="views/contact.html">📞 Contact Me</a> |
+          <a class="nav-link" href="views/fun.html">🎮 Interests</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mainimg">
+      <img src="static/hangzhou.jpg" alt="John Li" class="profile-image">
+    </div>
+
+    <main class="maincontent">
+      <h2 id="greeting">Hi, my name is John</h2>
+      <p id="shortBio">Hey, I am John! I love technology, music, and video games.</p>
+      <p id="fullBio" style="display: none;">
+        I am studying Information Systems and Computer Science at Carnegie Mellon. I love robotics.
+        I was the strategy lead and driver for my FRC team and even researched machine learning for robotics.
+        Outside of tech, music is a huge part of my life. I play piano and guitar, always messing around with different genres. 
+        I also love video games, mostly FPS and MOBA. When I am not coding or playing music, I love badminton and working out as well.
+      </p>
+      <button id="readMoreBtn">Read More</button>
+      <button id="readLessBtn" style="display: none;">Read Less</button>
+    </main>
+
+    <div class="bottomcontent">
+      <h3>Welcome!</h3>
+      <p>This is the official homepage of John Li. Here you can explore my projects, interests, and get in touch with me!</p>
     </div>
 
     <footer>
-        <p id="copyYear"></p>
-        designed 🛠️ and coded 👩‍💻 by John Li
+      <p id="copyYear"></p>
+      designed 🛠️ and coded 👩‍💻 by John Li
     </footer>
+  </div>
 </body>
 </html>

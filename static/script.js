@@ -1,168 +1,130 @@
-let x = 5;
-let y = 7;
-
-let A = 'Hello ';
-let B = 'world!';
-
-function SumNPrint(x1, x2) {
-    let x3 = x1 + x2;
-    console.log(x3);
-    return x3;
-}
-
-let z = SumNPrint(x, y);
-let C = SumNPrint(A, B);
-
-console.log(z);
-console.log(C);
-
-if (C.length > z) {
-    console.log(C);
-} else if (C.length < z) {
-    console.log(z);
-} else {
-    console.log('good job!');
-}
-
-
-function addYear() {
-    let currentYear = new Date().getFullYear();
-    let copyElem = document.getElementById("copyYear");
-    if (copyElem) {
-        copyElem.innerHTML = `&copy; ${currentYear}`;
-    }
-}
-
-//function showList() {
-//    let list = document.getElementById("funList");
-//    let button = document.getElementById("showButton");
-
-//    if (list && button) { 
-//        list.style.display = "block"; 
-//        button.style.display = "none"; 
-//    }
-//}
-
-
-function greetingFunc() {
-    let d = new Date();
-    let h = d.getHours();
-    let greetingMessage = '';
-
-    if (h < 12) {
-        greetingMessage = 'Good morning, I am John';
-    } else if (h < 18) {
-        greetingMessage = 'Good afternoon, I am John';
-    } else if (h < 20) {
-        greetingMessage = 'Good evening, I am John';
-    } else {
-        greetingMessage = 'Good night, I am John';
-    }
-
-    let greetElem = document.getElementById("greeting");
-    if (greetElem) {
-        greetElem.innerHTML = greetingMessage;
-    }
-}
-
-
-function getAdvice() {
-    fetch("https://api.adviceslip.com/advice")
-        .then(response => response.json())
-        .then(data => {
-            const advice = data.slip.advice;
-            let adviceElem = document.getElementById("adviceText");
-            if (adviceElem) {
-                adviceElem.innerText = advice;
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching advice:", error);
-            let adviceElem = document.getElementById("adviceText");
-            if (adviceElem) {
-                adviceElem.innerText = "Oops! Could not fetch advice right now.";
-            }
-        });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    
-    if (document.getElementById("greeting")) {
-        greetingFunc();
-    }
-
-    
     if (document.getElementById("funList")) {
-        let L1 = ['Watermelon', 'Pineapple', 'Pear', 'Banana'];
-        let L2 = ['Apple', 'Banana', 'Kiwi', 'Orange'];
-
-        function findTheBanana(array, arrayName) {
-            array.forEach((item, index) => {
-                if (item === "Banana") {
-                    alert(`We found a banana in the ${arrayName} at index ${index}`);
-                }
-            });
-        }
-
-        findTheBanana(L1, 'first array');
-        findTheBanana(L2, 'second array');
+      const L1 = ["Watermelon", "Pineapple", "Pear", "Banana"];
+      const L2 = ["Apple", "Banana", "Kiwi", "Orange"];
+  
+      function findTheBanana(array, label) {
+        array.forEach((item, index) => {
+          if (item === "Banana") {
+            alert(`We found a banana in the ${label} at index ${index}`);
+          }
+        });
+      }
+  
+      findTheBanana(L1, "first array");
+      findTheBanana(L2, "second array");
     }
-
-   
+  
     if (document.getElementById("contactForm")) {
-        document.getElementById("contactForm").addEventListener("submit", function (event) {
-            let isValid = true;
-
-            let nameField = document.getElementById("name");
-            let emailField = document.getElementById("email");
-            let messageField = document.getElementById("message");
-
-            let nameError = document.getElementById("nameError");
-            let emailError = document.getElementById("emailError");
-            let messageError = document.getElementById("messageError");
-
-            nameError.textContent = "";
-            emailError.textContent = "";
-            messageError.textContent = "";
-
-            if (nameField.value.trim() === "") {
-                nameError.textContent = "Please enter your name.";
-                isValid = false;
-            }
-
-            if (emailField.value.trim() === "") {
-                emailError.textContent = "Please enter your email.";
-                isValid = false;
-            } else if (!/\S+@\S+\.\S+/.test(emailField.value)) {
-                emailError.textContent = "Please enter a valid email address.";
-                isValid = false;
-            }
-
-            if (messageField.value.trim() === "") {
-                messageError.textContent = "Please enter your message.";
-                isValid = false;
-            }
-
-            if (!isValid) {
-                event.preventDefault();
-            }
-        });
+      document.getElementById("contactForm").addEventListener("submit", function (event) {
+        let isValid = true;
+  
+        const nameField = document.getElementById("name");
+        const emailField = document.getElementById("email");
+        const messageField = document.getElementById("message");
+  
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const messageError = document.getElementById("messageError");
+  
+        nameError.textContent = "";
+        emailError.textContent = "";
+        messageError.textContent = "";
+  
+        if (nameField.value.trim() === "") {
+          nameError.textContent = "Please enter your name.";
+          isValid = false;
+        }
+  
+        if (emailField.value.trim() === "") {
+          emailError.textContent = "Please enter your email.";
+          isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(emailField.value)) {
+          emailError.textContent = "Please enter a valid email address.";
+          isValid = false;
+        }
+  
+        if (messageField.value.trim() === "") {
+          messageError.textContent = "Please enter your message.";
+          isValid = false;
+        }
+  
+        if (!isValid) {
+          event.preventDefault();
+        }
+      });
     }
-
-    
-    if (document.getElementById("readMoreBtn") && document.getElementById("readLessBtn")) {
-        $("#readMoreBtn").click(function () {
-            $("#shortBio").hide();
-            $("#fullBio").slideDown();
-            $("#readMoreBtn").hide();
-            $("#readLessBtn").show();
-        });
-
-        $("#readLessBtn").click(function () {
-            $("#fullBio").slideUp();
-            $("#shortBio").show();
-            $("#readMoreBtn").show();
-            $("#readLessBtn").hide();
-        });
+  
+    // Active link highlight
+    const links = document.querySelectorAll(".nav-link");
+    const currentPath = window.location.pathname;
+    links.forEach(link => {
+      const linkPath = new URL(link.href).pathname;
+      if (currentPath.endsWith(linkPath)) {
+        link.classList.add("active");
+      }
+    });
+  });
+  
+  function greetingFunc() {
+    const greetingElement = document.getElementById("greeting");
+    if (!greetingElement) return;
+  
+    const hour = new Date().getHours();
+    let greeting = "";
+  
+    if (hour < 12) {
+      greeting = "Good morning, I am John";
+    } else if (hour < 18) {
+      greeting = "Good afternoon, I am John";
+    } else if (hour < 20) {
+      greeting = "Good evening, I am John";
+    } else {
+      greeting = "Good night, I am John";
     }
-});
+  
+    greetingElement.innerHTML = greeting;
+  }
+  greetingFunc();
+  
+  function addYear() {
+    const yearElement = document.getElementById("copyYear");
+    if (yearElement) {
+      const currentYear = new Date().getFullYear();
+      yearElement.innerHTML = `&copy; ${currentYear}`;
+    }
+  }
+  
+  function showList() {
+    const list = document.getElementById("funList");
+    const button = document.getElementById("showButton");
+  
+    if (list && button) {
+      list.style.display = "block";
+      button.style.display = "none";
+    }
+  }
+  
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks) {
+      navLinks.classList.toggle("show");
+    }
+  }
+  
+  $(document).ready(function () {
+    $("#readMoreBtn").click(function () {
+      $("#shortBio").hide();
+      $("#fullBio").slideDown();
+      $("#readMoreBtn").hide();
+      $("#readLessBtn").show();
+    });
+  
+    $("#readLessBtn").click(function () {
+      $("#fullBio").slideUp();
+      $("#shortBio").show();
+      $("#readMoreBtn").show();
+      $("#readLessBtn").hide();
+    });
+  });
+  

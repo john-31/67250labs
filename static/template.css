@@ -1,0 +1,90 @@
+.container {
+  display: grid;
+
+  /* This defines the named areas in a 2-column layout for the middle rows */
+  grid-template-areas:
+    "header"
+    "nav"
+    "mainimg maincontent"
+    "bottomcontent bottomcontent"
+    "footer footer";
+
+  /* Left column is 1 fraction wide, right column is 2 fractions wide */
+  grid-template-columns: 1fr 2fr;
+
+  /* Each row's height auto-fits its content */
+  grid-template-rows: auto auto auto auto auto;
+
+  gap: 10px;                    /* Spacing between grid cells */
+  max-width: 1000px;           /* Container width limit */
+  margin: 20px auto;           /* Center horizontally with top/bottom margin */
+  padding: 20px;               /* Inner padding */
+  background-color: white;     /* White background */
+  border-radius: 10px;         /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);  /* Subtle drop shadow */
+}
+
+/* GRID AREA ASSIGNMENTS + placeholder background colors */
+.header {
+  grid-area: header;
+  background-color: #ead4f7; /* Light purple */
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #f9d4d4; /* Light pink */
+}
+
+.mainimg {
+  grid-area: mainimg;
+  background-color: #fce9c6; /* Light orange */
+}
+
+.maincontent {
+  grid-area: maincontent;
+  background-color: #f1f7c4; /* Pale yellow */
+}
+
+.bottomcontent {
+  grid-area: bottomcontent;
+  background-color: #b8f7c4; /* Light green */
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #c2e7f2; /* Light blue */
+}
+
+/* Ensure each area is visible */
+.header,
+.nav,
+.mainimg,
+.maincontent,
+.bottomcontent,
+.footer {
+  /* Padding for breathing room */
+  padding: 20px;
+
+  /* Outline each area with a dashed border (for dev clarity) */
+  border: 1px dashed #aaa;
+
+  /* Example font styling */
+  font-family: sans-serif;
+  font-size: 16px;
+
+  /* By default, let them auto-size to content */
+}
+
+/* MOBILE (max-width: 768px) => stack everything */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "mainimg"
+      "maincontent"
+      "bottomcontent"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}

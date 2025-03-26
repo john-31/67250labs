@@ -1,86 +1,68 @@
+<!-- views/contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../static/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="John Li" />
+  <meta name="description" content="Contact Me" />
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="../static/style.css" />
+  <link rel="stylesheet" href="../static/template.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../static/script.js" defer></script>
 </head>
 <body onload="addYear()">
+  <div class="container">
     <header>
-        <nav>
-            <a class="nav-link" href="../index.html">🏠 Home</a> |
-            <a class="nav-link" href="cv.html">📄 Resume</a> |
-            <a class="nav-link" href="contact.html">📞 Contact Me</a> |
-            <a class="nav-link" href="fun.html">🎮 Interests</a>
-        </nav>
-        
+      <h1 id="webname">John Li</h1>
     </header>
 
-    <div class="mainLayout">
-        <div id="item1">
-            <h2>Find Me</h2>
-            <iframe 
-                class="mapFrame"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.582640040503!2d-79.94568338460949!3d40.44416797936186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f21f58679a9f%3A0x88716b461fc4daf4!2sCarnegie%20Mellon%20University!5e0!3m2!1sen!2sus!4v1711220497773!5m2!1sen!2sus"
-                width="600"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        
-            <table class="contactTable">
-                <thead>
-                    <tr>
-                        <th>Contact Method</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Email</td>
-                        <td>yunzel2@andrew.cmu.edu</td>
-                    </tr>
-                    <tr>
-                        <td>Phone</td>
-                        <td>(412) 339-8670</td>
-                    </tr>
-                    <tr>
-                        <td>LinkedIn</td>
-                        <td><a href="https://www.linkedin.com" target="_blank">linkedin.com/in/johnli</a></td>
-                    </tr>
-                </tbody>
-            </table>
+    <nav>
+      <div class="nav-container">
+        <i class="fas fa-bars hamburger-icon" onclick="toggleMenu()"></i>
+        <div class="nav-links" id="navLinks">
+          <a class="nav-link" href="../index.html">🏠 Home</a> |
+          <a class="nav-link" href="cv.html">📄 Resume</a> |
+          <a class="nav-link" href="contact.html">📞 Contact Me</a> |
+          <a class="nav-link" href="fun.html">🎮 Interests</a>
         </div>
-        
+      </div>
+    </nav>
 
-        <div id="item2">
-            <h2>Get in Touch</h2>
-            <form id="contactForm" novalidate>
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                <span class="error-message" id="nameError"></span>
+    <div class="mainimg">
+      <img src="../static/hangzhou.jpg" alt="John Li" class="profile-image">
+    </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <span class="error-message" id="emailError"></span>
+    <main class="maincontent">
+      <h2>Get in Touch</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <span class="error-message" id="nameError"></span>
 
-                <label for="message">Message:</label>
-                <textarea id="message" required></textarea>
-                <span class="error-message" id="messageError"></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <span class="error-message" id="emailError"></span>
 
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+        <label for="message">Message:</label>
+        <textarea id="message" rows="6" required></textarea>
+        <span class="error-message" id="messageError"></span>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </main>
+
+    <div class="bottomcontent">
+      <p>This section is part of the layout grid!</p>
     </div>
 
     <footer>
-        <p id="copyYear"></p> 
-        designed 🛠️ and coded 👩‍💻 by John Li
+      <p id="copyYear"></p>
+      designed 🛠️ and coded 👩‍💻 by John Li
     </footer>
+  </div>
 </body>
 </html>
